@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex;flex-direction: column; align-items :center">
+    <H1 style="color:red">LIST PAPER</H1>
+    <form action="/delete" method="post" enctype="multipart/form-data">
+
+        <table border="1">
+            <tr>
+                <th>STT</th>
+                <th>Tên bài báo</th>
+                <th>Tên tác giả</th>
+                <th>Số trang</th>
+                <th>Năm xuất bản</th>
+                <th>Check</th>
+            </tr>
+            <%for (let i = 0; i < data.length; i++) {%>
+                <tr>
+                    <td>
+                        <%=i+1%>
+                    </td>
+                    <td>
+                        <%=data[i].tenbaibao%>
+                    </td>
+                    <td>
+                        <%=data[i].tentacgia%>
+                    </td>
+                    <td>
+                        <%=data[i].sotrang%>
+                    </td>
+                    <td>
+                        <%=data[i].namxb%>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="<%=data[i].id%>"/>
+                    </td>
+                </tr>
+            <%}%>
+        </table>
+        <input type="submit" value="Delete">
+    </form>
+    </div>
+</body>
+</html>

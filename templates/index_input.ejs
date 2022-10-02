@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function kiemtra() {
+        var name = document.forms["inputForm"]["tenbaibao"].value;
+        var regexName = /[0-9]/;
+        if(regexName.test(name)){
+            alert("Name Sai");
+            return false;
+        }
+        return true;
+    }
+</script>
+<body>
+    <form action="/" method="post" name="inputForm" onsubmit="return kiemtra();" enctype="multipart/form-data">
+        <!-- <input type="number" name="id" placeholder="id" required="required"/> -->
+        <input type="text" name="tenbaibao" placeholder="Ten bai bao" required="required"/>
+        <input type="text" name="tentacgia" placeholder="Ten tac gia" required="required" />
+        <input type="number" name="sotrang" placeholder="So trang" required="required" min="1" />
+        <input type="number" name="namxb" placeholder="Nam xuat ban" required="required" min="1900" />
+        <input type="submit" value="Save" />
+    </form>
+</body>
+</html>
